@@ -22,7 +22,7 @@ defmodule AwsSignUrl.Mixfile do
       files: ["lib", "mix.exs"],
       maintainers: ["Nithin Bekal"],
       licenses: ["MIT"],
-      links: %{"Github" => "https://github.com/nithinbekal/aws_sign_url"},
+      links: %{"Github" => "https://github.com/nithinbekal/aws-sign-url"},
     ]
   end
 end
