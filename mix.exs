@@ -7,7 +7,7 @@ defmodule AwsSignUrl.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: [],
+     deps: deps,
      description: "Provides a function to sign Amazon REST API request URLs",
      package: package,
     ]
@@ -15,6 +15,10 @@ defmodule AwsSignUrl.Mixfile do
 
   def application do
     [applications: [:logger]]
+  end
+
+  def deps do
+    [{:ex_doc, ">= 0.0.0", only: :dev}]
   end
 
   def package do
