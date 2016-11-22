@@ -1,24 +1,20 @@
 # AwsSignUrl
 
-**TODO: Add description**
+Sign Amazon REST API request URLs.
 
-## Installation
+## Usage
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+Add `aws_sign_url` to your list of dependencies in `mix.exs`:
 
-  1. Add `aws_sign_url` to your list of dependencies in `mix.exs`:
+```elixir
+def deps do
+  [{:aws_sign_url, "~> 0.1.0"}]
+end
+```
 
-    ```elixir
-    def deps do
-      [{:aws_sign_url, "~> 0.1.0"}]
-    end
-    ```
+Use the `call/2` function to add timestamp and signature to the URL.
 
-  2. Ensure `aws_sign_url` is started before your application:
-
-    ```elixir
-    def application do
-      [applications: [:aws_sign_url]]
-    end
-    ```
-
+```elixir
+AwsSignUrl.call("http://webservices.amazon.com/onca/xml?foo=bar", "secret_access_key")
+#=> "http://webservices.amazon.com/onca/xml?foo=bar&Timestamp=[timestamp]&Signature=some-signature"
+```
