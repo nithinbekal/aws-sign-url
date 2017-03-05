@@ -24,7 +24,7 @@ defmodule AwsSignUrl do
     query_with_ts =
       url.query
       |> URI.decode_query
-      |> Map.put("Timestamp", timestamp)
+      |> Map.put("Timestamp", timestamp())
       |> URI.encode_query
       |> String.replace("+", "%20")
 
